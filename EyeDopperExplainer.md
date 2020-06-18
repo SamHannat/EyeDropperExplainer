@@ -17,11 +17,10 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 | asdf                                                                                                                                                                                                      | asdf                                                                     |
 
 ## Goals 
+- Create an Eyedropper API that returns the hex value of a pixel when the pixel is clicked 
+- The eyedropper will be able to provide a preview (in a grid format) when clicked on 
+- Allow the user to cancel eyedropper mode  
 
-- Allow image editing applications to implement eyedropper functionality which can pick color from one pixel and is customizable for the user 
-- The eyedropper will be able to provide a preview when clicked on (all info contained within the browser) 
-- Allow the user to cancel selection via Escape key 
-- Create a tool that is secure and will prevent privacy issues (only send info to site when clicked) 
 ## Non-Goals
 - Allow the user to have a color picker screen to choose color from 
 - Developing the UI and functionality of an eyedropper 
