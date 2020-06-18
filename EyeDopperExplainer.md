@@ -11,3 +11,6 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 - The eyedropper will be able to provide a preview when clicked on (all info contained within the browser) 
 - Allow the user to cancel selection via Escape key 
 - Create a tool that is secure and will prevent privacy issues (only send info to site when clicked) 
+## Non-Goals
+- Allow the user to have a color picker screen to choose color from 
+- Developing the UI and functionality of an eyedropper 
