@@ -19,9 +19,9 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 | The visual below highlights the eyedropper feature inside of Paint, a desktop image editing application. The eyedropper is able to select pixels within the canvas and queue them in color boxes. |
 | <p align="center"> <img src="paint.gif"> </p> |
 | The visual below depicts the eyedropper tool inside of Gimp, another desktop image editing application. Unlike Paint, Gimp is able to sample the average color of a specified radius of pixels inside the canvas. |
-| ![Alt Text](gimp.gif) |
+| <p align="center"> <img src="gimp.gif"> </p> |
 | The visual to the left displays the eyedropper tool inside of Figma, an image editing web application. Uniquely, this eyedropper gives users a preview of the current color as well as the color of pixels around it. This tool is restricted to sampling colors within the canvas. |
-| ![Alt Text](figma.gif)|
+| <p align="center"> <img src="figma.gif"> </p> |
 
 ## Goals 
 - Create an Eyedropper API that returns the hex value of a pixel when the pixel is clicked 
@@ -38,3 +38,7 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 - Create a React component which can be imported as a package for Version 1 but we might implement it in Version 2 as it would prove beneficial to developers using React 
 - Allow the user to select more than one pixel while in Eyedropper mode. This has been mentioned during our customer interviews as a possible addition to version 2 but "not needed for version 1".
 - Disable the Eyedropper when outside of the browser screen
+
+## Solution
+ - The API will enable web developers to incorporate an eyedropper in their native web applications. The eyedropper would allow the developer to access the pixel data at a location specified by the cursor such as RGBA value, a live update preview of the pixel, radius size of the pixel area to capture, a keyboard shortcut to escape out of the eyedropper. 
+ - The following code example is what a developer would use to access the eyedropper API. 
