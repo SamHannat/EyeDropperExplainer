@@ -13,8 +13,13 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 ## Goals 
 - Create an Eyedropper API that returns the hex value of a pixel when the pixel is clicked 
 - The eyedropper will be able to provide a preview (in a grid format) when clicked on 
+(will insert pic of eyedropper we already have)
 - Allow the user to cancel eyedropper mode  
+- Allow eyedropper access outside of the browser unless disabled
+- Allow the developer to disable eyedropper mode when hovering over the toolbar and outside the browser screen
 
 ## Non-Goals
 - Allow the user to have a color picker screen to choose color from 
-- Developing the UI and functionality of an eyedropper 
+- Allowing the developer to customize the UI of the eyedropper. This is more of a V2 since customers told us that it was not their top priority currently. 
+- Create a React component which can be imported as a package for V1 but we might implement it in V2 as it would prove beneficial to developers using React 
+
