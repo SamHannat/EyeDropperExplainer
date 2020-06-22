@@ -76,14 +76,13 @@ This event is fired when the eyedropper is exited manually by the user by pressi
 let EyeDropper = new EyeDropper();
 
 //the eyedropper is enabled when the eyedropper icon is clicked
-document.getElementbyId("eyedropperIcon").addEventListener('click', event => {
-   EyeDropper.enable()
+document.getElementbyId("eyedropperIcon").addEventListener('click', (event) => {
+   EyeDropper.enable();
  });
  
  //when EyeDropper is enabled, return pixel data and disable Eyedropper immediately using pixelSelect event
- document.addEventListener('pixelSelect', event => {
-    console.log(EyeDropper.pixelData) // returns hex value and cursor position
-    Eyedropper.disable(); // Disable the EyeDropper immediately 
+ document.addEventListener('pixelSelect', (event) => {
+    console.log("The pixel at (" + event.clientX + "," + event.clientY + ") has a hex value of " + EyeDropper.value); // returns hex value and cursor position
  });
  ```
  
