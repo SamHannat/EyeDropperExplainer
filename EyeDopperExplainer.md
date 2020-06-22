@@ -24,7 +24,7 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 | <p align="center"> <img src="figma.gif"> </p> |
 
 ## Goals 
-- Create an Eyedropper API that returns the hex value of a pixel when the pixel is clicked 
+- Create an Eyedropper API that returns the hex value of a pixel and the cursor coordinates when the pixel is clicked 
 - The eyedropper will be able to provide a preview (in a grid format) when clicked on
 - <img src= "https://github.com/SamHannat/EyeDropperExplainer/blob/master/preview.png" alt= "Preview feature of EyeDropper" max-height= "150"/>
 - Allow the user to cancel eyedropper mode  
