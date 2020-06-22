@@ -17,11 +17,11 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 | Feature Explanation |
 | ------------- |
 | The visual below highlights the eyedropper feature inside of Paint, a desktop image editing application. The eyedropper is able to select pixels within the canvas and queue them in color boxes. |
-| ![Alt Text](paint.gif) |
+| <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/paint.gif" height="550"/>|
 | The visual below depicts the eyedropper tool inside of Gimp, another desktop image editing application. Unlike Paint, Gimp is able to sample the average color of a specified radius of pixels inside the canvas. |
-| ![Alt Text](gimp.gif) |
+|  <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/gimp.gif" height="550"/> |
 | The visual to the left displays the eyedropper tool inside of Figma, an image editing web application. Uniquely, this eyedropper gives users a preview of the current color as well as the color of pixels around it. This tool is restricted to sampling colors within the canvas. |
-| ![Alt Text](figma.gif)|
+|  <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/figma.gif" height="550"/>|
 
 ## Goals 
 - Create an Eyedropper API that returns the hex value of a pixel and the cursor coordinates when the pixel is clicked 
@@ -32,7 +32,7 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 - Allow the developer to disable eyedropper mode when hovering over the toolbar
 
 ## Non-Goals
-- Return a Color object rather than hex value when pixel is clicked. We will implement this as soon as a Color object is avaiable in HTML to implement. 
+- Return a Color object rather than hex value when pixel is clicked. This will be implemented as soon as a Color object is avaiable in HTML to implement. 
 - Allowing the developer to customize the UI of the eyedropper. This is more of a Version 2 since customers have told us that it was not their top priority currently. 
 - Allow the user to select more than one pixel while in Eyedropper mode. This has been mentioned during our customer interviews as a possible addition to version 2 but "not needed for version 1".
 - Allowing the developer to restrict the Eyedropper when in certain areas
