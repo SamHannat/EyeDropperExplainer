@@ -79,7 +79,17 @@ let EyeDropper = new EyeDropper();
 document.addEventListener('eyedropperclick, event => {
    EyeDropper.enable()
  });
+ 
+ //when EyeDropper is enabled, return pixel data and disable Eyedropper immediately
+ if(EyeDropper.enable()){
+    e.addEventListener(“mouseClicked”, (event) => { when pixel is clicked on
+    console.log(e.pixelData) // returns hex value and cursor position
+    e.disable(); // Disable the EyeDropper immediately 
+    });
+  });
+
  ```
+ 
 ## Metrics
 - User studies
 - Length of time of each use
