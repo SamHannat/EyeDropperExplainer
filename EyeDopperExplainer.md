@@ -87,8 +87,9 @@ document.getElementbyId("eyedropperIcon").addEventListener('click', (event) => {
  ```
  
 ## Metrics
+The following methods will be used to determine how the user interacts with the eyedropper. The data collected from these methods are important in determining the usability of the product.
 - User studies
 - Length of time of each use
 - Length of time between pixel selection
 - Number of uses per browser session
-- Desktop vs browser usage146
+- Desktop vs browser usage
