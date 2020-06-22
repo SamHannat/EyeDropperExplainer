@@ -46,7 +46,7 @@ We propose the addition of an eyedropper object with the following functionality
 
 #### Methods
 - EyeDropper(): Constructor for the eyedropper object
-- enable():  Replaces the cursor with predefined magnifying preview. When the mouse is clicked, the value attribute of the eyedropper object is updated with the color of the pixel where the user clicked. 
+- enable():  Replaces the cursor with predefined magnifying preview. When the mouse is clicked, the value attribute of the eyedropper object is updated with the color of the pixel where the user clicked. Calling enable on an eyedropper when one is already enabled throws an error.  
 
 - disable(): Exits the magnifying preview and the cursor returns to its regular functionality. 
 
@@ -64,7 +64,7 @@ This event is fired when a user using the eyedropper selects a colour.
 
 The value attribute of the eyedropper object is replaced by the hex value of the color of the pixel the user selected. After the event is fired, the eyedropper is disabled.
 
-The screenX, screenY attributes of the event are populated with the (x,y) coordinates of where the user clicked. 
+The screenX, screenY attributes of the event are populated with the (x,y) coordinates of where the user clicked. The ID attribute of the event is populated with that of the eyedropper object that triggered the event. 
 
 #### exit
 
@@ -72,13 +72,9 @@ This event is fired when the eyedropper is exited manually by the user by pressi
 
 ## Example Usage
 ```javascript
-//creating an eyedropper object
-let EyeDropper = new EyeDropper();
-
-//the eyedropper is enabled when the eyedropper icon is clicked
-document.addEventListener('eyedropperclick, event => {
+document.getElementById().addEventListener('click', event => {
    EyeDropper.enable()
- });
+ });;
  ```
 ## Metrics
 - User studies
