@@ -17,11 +17,11 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 | Feature Explanation |
 | ------------- |
 | The visual below highlights the eyedropper feature inside of Paint, a desktop image editing application. The eyedropper is able to select pixels within the canvas and queue them in color boxes. |
-| <p align="center"> <img src="paint.gif"> </p> |
+| ![Alt Text](paint.gif) |
 | The visual below depicts the eyedropper tool inside of Gimp, another desktop image editing application. Unlike Paint, Gimp is able to sample the average color of a specified radius of pixels inside the canvas. |
-| <p align="center"> <img src="gimp.gif"> </p> |
+| ![Alt Text](gimp.gif) |
 | The visual to the left displays the eyedropper tool inside of Figma, an image editing web application. Uniquely, this eyedropper gives users a preview of the current color as well as the color of pixels around it. This tool is restricted to sampling colors within the canvas. |
-| <p align="center"> <img src="figma.gif"> </p> |
+| ![Alt Text](figma.gif)|
 
 ## Goals 
 - Create an Eyedropper API that returns the hex value of a pixel when the pixel is clicked 
@@ -29,16 +29,46 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 
 (will insert pic of eyedropper we already have)
 - Allow the user to cancel eyedropper mode  
-- Allow eyedropper access outside of the browser 
-- Allow the developer to disable eyedropper mode when hovering over the toolbar
+- Allow eyedropper access outside of the browser unless disabled
+- Allow the developer to disable eyedropper mode when hovering over the toolbar and outside the browser screen
 
 ## Non-Goals
 - Allow the user to have a color picker screen to choose color from 
 - Allowing the developer to customize the UI of the eyedropper. This is more of a Version 2 since customers have told us that it was not their top priority currently. 
 - Create a React component which can be imported as a package for Version 1 but we might implement it in Version 2 as it would prove beneficial to developers using React 
 - Allow the user to select more than one pixel while in Eyedropper mode. This has been mentioned during our customer interviews as a possible addition to version 2 but "not needed for version 1".
-- Disable the Eyedropper when outside of the browser screen
 
 ## Solution
- - The API will enable web developers to incorporate an eyedropper in their native web applications. The eyedropper would allow the developer to access the pixel data at a location specified by the cursor such as RGBA value, a live update preview of the pixel, radius size of the pixel area to capture, a keyboard shortcut to escape out of the eyedropper. 
- - The following code example is what a developer would use to access the eyedropper API. 
+
+
+### EyeDropper Object
+
+We propose the addition of an eyedropper object with the following functionality:
+
+#### Methods
+- EyeDropper(): Constructor for the eyedropper object
+- enable(_exclude_):  Replaces the cursor with predefined magnifying preview. When the mouse is clicked, the value attribute of the eyedropper object is updated with the color of the pixel where the user clicked. 
+
+..- _exclude_ (Optional Parameter): String representing a CSS selector. All DOM elements that match such selector will be excluded from the eyedropper, i.e., when the magnifying preview hovers over an excluded element, it will be replaced by a regular cursor as the user is not able to select a color from this element.
+
+- disable(): Exits the magnifying preview and the cursor returns to its regular functionality. 
+
+#### Attributes 
+- value: The hex value of the color of the last pixel chosen by the eyedropper. Defaults to #000000  
+
+- IsEnabled: Whether the magnifying preview of the eyedropper is enabled.  
+
+### Proposed Events
+
+We propose two events that a developer can utilize in their applications
+
+#### colorselect
+This event is fired when a user using the eyedropper selects a colour. 
+
+The value attribute of the eyedropper object is replaced by the hex value of the color of the pixel the user selected. 
+
+The screenX, screenY attributes of the event are populated with the (x,y) coordinates of where the user clicked. 
+
+#### exit
+
+This event is fired when the eyedropper is exited manually by the user by pressing escape. This event allows developers to graciously handle such a scenario. 
