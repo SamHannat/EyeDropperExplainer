@@ -72,9 +72,13 @@ This event is fired when the eyedropper is exited manually by the user by pressi
 
 ## Example Usage
 ```javascript
+//creating an eyedropper object
+let EyeDropper = new EyeDropper();
+
+//the eyedropper is enabled when the eyedropper icon is clicked
 document.addEventListener('eyedropperclick, event => {
    EyeDropper.enable()
- });;
+ });
  ```
 ## Metrics
 - User studies
