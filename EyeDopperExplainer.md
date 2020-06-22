@@ -26,8 +26,7 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 ## Goals 
 - Create an Eyedropper API that returns the hex value of a pixel when the pixel is clicked 
 - The eyedropper will be able to provide a preview (in a grid format) when clicked on
-
-(will insert pic of eyedropper we already have)
+- <img src= "https://github.com/SamHannat/EyeDropperExplainer/blob/master/preview.png" alt= "Preview feature of EyeDropper" max-height= "150"/>
 - Allow the user to cancel eyedropper mode  
 - Allow eyedropper access outside of the browser 
 - Allow the developer to disable eyedropper mode when hovering over the toolbar
