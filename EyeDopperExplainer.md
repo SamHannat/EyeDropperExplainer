@@ -71,9 +71,9 @@ The screenX, screenY attributes of the event are populated with the (x,y) coordi
 This event is fired when the eyedropper is exited manually by the user by pressing escape. This event allows developers to graciously handle such a scenario. 
 
 ## Example Usage
-`document.addEventListener('eyedropperclick, event => {
+```document.addEventListener('eyedropperclick, event => {
    EyeDropper.enable()
- });;`
+ });;```
 ## Metrics
 - User studies
 - Length of time of each use
