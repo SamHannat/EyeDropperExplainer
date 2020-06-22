@@ -72,10 +72,24 @@ This event is fired when the eyedropper is exited manually by the user by pressi
 
 ## Example Usage
 ```javascript
-document.getElementById().addEventListener('click', event => {
+//creating an eyedropper object
+let EyeDropper = new EyeDropper();
+
+//the eyedropper is enabled when the eyedropper icon is clicked
+document.getElementbyId("eyedropperIcon").addEventListener('click', event => {
    EyeDropper.enable()
- });;
+ });
+ 
+ //when EyeDropper is enabled, return pixel data and disable Eyedropper immediately
+ if(EyeDropper.enable()){
+    document.addEventListener('click', (event) => { //when pixel is clicked on
+    console.log(EyeDropper.pixelData) // returns hex value and cursor position
+    Eyedropper.disable(); // Disable the EyeDropper immediately 
+    });
+  });
+
  ```
+ 
 ## Metrics
 - User studies
 - Length of time of each use
