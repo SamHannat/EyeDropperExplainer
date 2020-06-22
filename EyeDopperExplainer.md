@@ -62,7 +62,7 @@ We propose two events that a developer can utilize in their applications
 #### colorselect
 This event is fired when a user using the eyedropper selects a colour. 
 
-The value attribute of the eyedropper object is replaced by the hex value of the color of the pixel the user selected. 
+The value attribute of the eyedropper object is replaced by the hex value of the color of the pixel the user selected. After the event is fired, the eyedropper is disabled.
 
 The screenX, screenY attributes of the event are populated with the (x,y) coordinates of where the user clicked. 
 
