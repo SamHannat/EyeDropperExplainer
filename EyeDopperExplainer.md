@@ -29,7 +29,6 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 - <img src= "https://github.com/SamHannat/EyeDropperExplainer/blob/master/preview.png" alt= "Preview feature of EyeDropper" max-height= "150"/>
 - Allow the user to cancel eyedropper mode through ESC key as well as other methods chosen by the developer  
 - Allow eyedropper access outside of the browser 
-- Allow the developer to disable eyedropper mode when hovering over the toolbar
 
 ## Non-Goals
 - Return a Color object rather than hex value when pixel is clicked. This will be implemented as soon as a Color object is avaiable in HTML to implement. 
