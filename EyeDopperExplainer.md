@@ -82,7 +82,7 @@ document.addEventListener('eyedropperclick, event => {
  
  //when EyeDropper is enabled, return pixel data and disable Eyedropper immediately
  if(EyeDropper.enable()){
-    e.addEventListener(“mouseClicked”, (event) => { when pixel is clicked on
+    e.addEventListener(“mouseClicked”, (event) => { //when pixel is clicked on
     console.log(e.pixelData) // returns hex value and cursor position
     e.disable(); // Disable the EyeDropper immediately 
     });
