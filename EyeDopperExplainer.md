@@ -80,14 +80,11 @@ document.getElementbyId("eyedropperIcon").addEventListener('click', event => {
    EyeDropper.enable()
  });
  
- //when EyeDropper is enabled, return pixel data and disable Eyedropper immediately
- if(EyeDropper.enable()){
-    document.addEventListener('click', (event) => { //when pixel is clicked on
+ //when EyeDropper is enabled, return pixel data and disable Eyedropper immediately using pixelSelect event
+ document.addEventListener('pixelSelect', event => {
     console.log(EyeDropper.pixelData) // returns hex value and cursor position
     Eyedropper.disable(); // Disable the EyeDropper immediately 
-    });
-  });
-
+ });
  ```
  
 ## Metrics
