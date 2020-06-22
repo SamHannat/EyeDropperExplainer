@@ -34,9 +34,8 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 ## Non-Goals
 - Return a Color object rather than hex value when pixel is clicked. We will implement this as soon as a Color object is avaiable in HTML to implement. 
 - Allowing the developer to customize the UI of the eyedropper. This is more of a Version 2 since customers have told us that it was not their top priority currently. 
-- Create a React component which can be imported as a package for Version 1 but we might implement it in Version 2 as it would prove beneficial to developers using React 
 - Allow the user to select more than one pixel while in Eyedropper mode. This has been mentioned during our customer interviews as a possible addition to version 2 but "not needed for version 1".
-- Disable the Eyedropper when outside of the browser screen
+- Allowing the developer to restrict the Eyedropper when in certain areas
 
 ## Solution
  - The API will enable web developers to incorporate an eyedropper in their native web applications. The eyedropper would allow the developer to access the pixel data at a location specified by the cursor such as RGBA value, a live update preview of the pixel, radius size of the pixel area to capture, a keyboard shortcut to escape out of the eyedropper. 
