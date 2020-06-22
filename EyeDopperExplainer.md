@@ -38,7 +38,7 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 - Allowing the developer to restrict the Eyedropper when in certain areas
 
 ## Solution
-
+ - The API will enable web developers to incorporate an eyedropper in their native web applications. The eyedropper would allow the developer to access the pixel data at a location specified by the cursor such as hex value, and the cursor position.  
 
 ### EyeDropper Object
 
@@ -46,9 +46,7 @@ We propose the addition of an eyedropper object with the following functionality
 
 #### Methods
 - EyeDropper(): Constructor for the eyedropper object
-- enable(_exclude_):  Replaces the cursor with predefined magnifying preview. When the mouse is clicked, the value attribute of the eyedropper object is updated with the color of the pixel where the user clicked. 
-
-..- _exclude_ (Optional Parameter): String representing a CSS selector. All DOM elements that match such selector will be excluded from the eyedropper, i.e., when the magnifying preview hovers over an excluded element, it will be replaced by a regular cursor as the user is not able to select a color from this element.
+- enable():  Replaces the cursor with predefined magnifying preview. When the mouse is clicked, the value attribute of the eyedropper object is updated with the color of the pixel where the user clicked. 
 
 - disable(): Exits the magnifying preview and the cursor returns to its regular functionality. 
 
@@ -71,3 +69,10 @@ The screenX, screenY attributes of the event are populated with the (x,y) coordi
 #### exit
 
 This event is fired when the eyedropper is exited manually by the user by pressing escape. This event allows developers to graciously handle such a scenario. 
+
+## Metrics
+- User studies
+- Length of time of each use
+- Length of time between pixel selection
+- Number of uses per browser session
+- Desktop vs browser usage146
