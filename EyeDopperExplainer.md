@@ -24,19 +24,18 @@ Currently, desktop versions of apps with eyedroppers have many different feature
 | ![Alt Text](figma.gif)|
 
 ## Goals 
-- Create an Eyedropper API that returns the hex value of a pixel when the pixel is clicked 
+- Create an Eyedropper API that returns the hex value of a pixel and the cursor coordinates when the pixel is clicked 
 - The eyedropper will be able to provide a preview (in a grid format) when clicked on
-
-(will insert pic of eyedropper we already have)
-- Allow the user to cancel eyedropper mode  
-- Allow eyedropper access outside of the browser unless disabled
-- Allow the developer to disable eyedropper mode when hovering over the toolbar and outside the browser screen
+- <img src= "https://github.com/SamHannat/EyeDropperExplainer/blob/master/preview.png" alt= "Preview feature of EyeDropper" max-height= "150"/>
+- Allow the user to cancel eyedropper mode through ESC key as well as other methods chosen by the developer  
+- Allow eyedropper access outside of the browser 
+- Allow the developer to disable eyedropper mode when hovering over the toolbar
 
 ## Non-Goals
-- Allow the user to have a color picker screen to choose color from 
+- Return a Color object rather than hex value when pixel is clicked. We will implement this as soon as a Color object is avaiable in HTML to implement. 
 - Allowing the developer to customize the UI of the eyedropper. This is more of a Version 2 since customers have told us that it was not their top priority currently. 
-- Create a React component which can be imported as a package for Version 1 but we might implement it in Version 2 as it would prove beneficial to developers using React 
 - Allow the user to select more than one pixel while in Eyedropper mode. This has been mentioned during our customer interviews as a possible addition to version 2 but "not needed for version 1".
+- Allowing the developer to restrict the Eyedropper when in certain areas
 
 ## Solution
 
