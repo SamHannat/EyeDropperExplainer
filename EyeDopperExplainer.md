@@ -78,7 +78,7 @@ document.getElementbyId("eyedropperIcon").addEventListener('click', (event) => {
  
 | Appendix |
 | ------------- |
-| ->A<- |
+| <center>A</center> |
 |  <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/figma.gif" height="550"/>|
-| ->B<- |
+| <center>B</center> |
 | <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/paint.gif" height="550"/>|
