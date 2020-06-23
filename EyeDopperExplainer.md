@@ -26,8 +26,16 @@ Currently, desktop and web versions of apps with eyedroppers have many different
 - Allowing the developer to customize the UI of the eyedropper. 
 - Allowing the developer to restrict the Eyedropper when in certain areas. It is important to have a way to control the cursor and the EyeDropper mode, but is something that will be implented in future iterations of the API. 
 
+## Privacy
+Exposing endpoints allowing develoeprs to grab raw pixel data from a users machine presents security challenges. We have modelled the API around these concerns, namely:  
+<ul>
+    <li>As mentioned above, the user at any point during the color picking phase of the eyedropper is able to cancel the operation with the ESC key.</li>
+    <li>Sampling of pixel data will require user action. However, a browser permission will not be required.</li>
+    <li>The only pixel data that is exposed through the API is that of the pixel that the user select. That means, there will not be a stream of pixel data exposed while the user is in the process of selecting the pixel. </li>
+</ul>
+
 ## Solution
- - The API will enable web developers to incorporate an eyedropper in their native web applications. The eyedropper would allow the developer to access the pixel data at a location specified by the cursor such as hex value, and the cursor position.  
+ The API will enable web developers to incorporate an eyedropper in their web applications. The eyedropper would allow the developer to access the hex value of a user specified pixel and its position.  
 
 ### EyeDropper Object
 
@@ -35,12 +43,11 @@ We propose the addition of an eyedropper object with the following functionality
 
 #### Methods
 - EyeDropper(): Constructor for the eyedropper object
-- enable():  Replaces the cursor with predefined magnifying preview. When the mouse is clicked, the value attribute of the eyedropper object is updated with the color of the pixel where the user clicked. Calling enable on an eyedropper when one is already enabled throws an error.  
+- enable():  Replaces the cursor with a browser-defined preview. When the mouse is clicked, the value attribute of the eyedropper object is updated with the color of the pixel where the user clicked. Calling enable on an eyedropper when one is already enabled throws an error.  
 
 - disable(): Exits the magnifying preview and the cursor returns to its regular functionality. 
 
 #### Attributes 
-- value: The hex value of the color of the last pixel chosen by the eyedropper. Defaults to #000000  
 
 - IsEnabled: Whether the magnifying preview of the eyedropper is enabled.  
 
@@ -53,7 +60,7 @@ This event is fired when a user using the eyedropper selects a colour.
 
 The value attribute of the eyedropper object is replaced by the hex value of the color of the pixel the user selected. After the event is fired, the eyedropper is disabled.
 
-The screenX, screenY attributes of the event are populated with the (x,y) coordinates of where the user clicked. The ID attribute of the event is populated with that of the eyedropper object that triggered the event. 
+The screenX, screenY attributes of the event are populated with the (x,y) coordinates of where the user clicked. The value attribute of the event is populated with the hex value of the pixel the user selected. 
 
 #### exit
 
@@ -62,16 +69,16 @@ This event is fired when the eyedropper is exited manually by the user by pressi
 ## Example Usage
 ```javascript
 //creating an eyedropper object
-let EyeDropper = new EyeDropper();
+let eyeDropper = new EyeDropper();
 
 //the eyedropper is enabled when the eyedropper icon is clicked
 document.getElementbyId("eyedropperIcon").addEventListener('click', (event) => {
-   EyeDropper.enable();
+   eyeDropper.enable();
  });
  
  //when EyeDropper is enabled, return pixel data and disable Eyedropper immediately using pixelSelect event
- document.addEventListener('pixelSelect', (event) => {
-    console.log("The pixel at (" + event.clientX + "," + event.clientY + ") has a hex value of " + EyeDropper.value); // returns hex value and cursor position
+ eyeDropper.addEventListener('colorselect', (event) => {
+    console.log("The pixel at (" + event.clientX + "," + event.clientY + ") has a hex value of " + event.value); // returns hex value and cursor position
  });
  ```
  
