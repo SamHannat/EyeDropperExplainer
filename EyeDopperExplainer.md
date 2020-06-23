@@ -18,14 +18,13 @@ Currently, desktop and web versions of apps with eyedroppers have many different
 - <img src= "https://github.com/SamHannat/EyeDropperExplainer/blob/master/preview.png" alt= "Preview feature of EyeDropper" max-height= "150"/>
 - Allow the user to cancel eyedropper mode through ESC key as a built-in fail-safe
 - Allow the developer to enable and disable the EyeDropper
-- Allow eyedropper access outside of the browser 
+- Allow EyeDropper acesss across domains, windows, or from non-browser apps.
 - Allow the user to select more than one pixel while in Eyedropper mode. 
 
 ## Non-Goals
 - Return a Color object rather than hex value when pixel is clicked. This will be implemented as soon as a Color object is avaiable in HTML to implement. 
-- Allowing the developer to customize the UI of the eyedropper. This is more of a Version 2 since customers have told us that it was not their top priority currently. 
-
-- Allowing the developer to restrict the Eyedropper when in certain areas
+- Allowing the developer to customize the UI of the eyedropper. 
+- Allowing the developer to restrict the Eyedropper when in certain areas. It is important to have a way to control the cursor and the EyeDropper mode, but is something that will be implented in future iterations of the API. 
 
 ## Solution
  - The API will enable web developers to incorporate an eyedropper in their native web applications. The eyedropper would allow the developer to access the pixel data at a location specified by the cursor such as hex value, and the cursor position.  
