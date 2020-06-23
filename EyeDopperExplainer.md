@@ -2,26 +2,15 @@
 Authors: [Sidhika Tripathee](https://github.com/t-sitri), [McKinna Estridge](https://github.com/t-saestr), [Sammy Hannat](https://github.com/samhannat)
 
 ## Introduction
-Currently on the web, creative application developers are unable to implement eyedropper functionality. This explainer proposes a web-based API that enables developers to build eyedropper-like tools in their web apps. 
+Currently on the web, creative application developers are unable to implement an eyedropper, a tool that can return the color of any pixel on the screen. This explainer proposes a web-based API that enables developers to build eyedropper-like tools in their web apps. 
 
-## Problem
+## Problem/Motivation
 
 Several creative applications would like to utilize the ability to pick a color from pixels on the screen. Many cross-platform applications, e.g. Powerpoint, have eyedroppper functionality on their native app but are unable to carry it over the web.      
    
-Although some browsers have built-in eyedropper functionality into color input tags. This limits customizability and can be seen as being out of place for many applications. 
+Even though some browsers have built-in eyedropper functionality into color input tags, this limits customizability and can be seen as being out of place for many applications. 
 
-## Motivation
-
-Currently, desktop versions of apps with eyedroppers have many different features which have motivated our solution. Some of them are: preview of pixel color, averaging of surrounding pixels, and adding eyedropper colors to a queue inside of a color box.
-
-| Feature Explanation |
-| ------------- |
-| The visual below highlights the eyedropper feature inside of Paint, a desktop image editing application. The eyedropper is able to select pixels within the canvas and queue them in color boxes. |
-| <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/paint.gif" height="550"/>|
-| The visual below depicts the eyedropper tool inside of Gimp, another desktop image editing application. Unlike Paint, Gimp is able to sample the average color of a specified radius of pixels inside the canvas. |
-|  <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/gimp.gif" height="550"/> |
-| The visual to the left displays the eyedropper tool inside of Figma, an image editing web application. Uniquely, this eyedropper gives users a preview of the current color as well as the color of pixels around it. This tool is restricted to sampling colors within the canvas. |
-|  <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/figma.gif" height="550"/>|
+Currently, desktop and web versions of apps with eyedroppers have many different features which have shaped our solution. Features like the preview of a pixel color and adding eyedropper colors to a queue are specific features invisioned in the solution. See Appendix A to view an example of the preview feature inside of Figma, an image editing web application. See Appendix B to view an example of the color queue feature inside of Paint, a desktop image editing application. 
 
 ## Goals 
 - Create an Eyedropper API that returns the hex value of a pixel and the cursor coordinates when the pixel is clicked 
@@ -85,10 +74,11 @@ document.getElementbyId("eyedropperIcon").addEventListener('click', (event) => {
  });
  ```
  
-## Metrics
-The following methods will be used to determine how the user interacts with the eyedropper. The data collected from these methods are important in determining the usability of the product.
-- User studies
-- Length of time of each use
-- Length of time between pixel selection
-- Number of uses per browser session
-- Desktop vs browser usage
+ ## Appendix
+ 
+| Appendix |
+| ------------- |
+| A |
+|  <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/figma.gif" height="550"/>|
+| B |
+| <img src = "https://github.com/SamHannat/EyeDropperExplainer/blob/master/paint.gif" height="550"/>|
